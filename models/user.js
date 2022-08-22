@@ -22,9 +22,6 @@ var userSchema = new Schema({
 		type: String,
 		require: true,
 	},
-	workHist: {
-		arr: ['', '', ''],
-	},
 	state: {
 		type: String,
 		require: true,
