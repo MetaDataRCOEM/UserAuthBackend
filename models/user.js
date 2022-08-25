@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt');
+const { Date } = require('mongoose');
 var userSchema = new Schema({
 	username: {
 		type: String,
@@ -11,6 +12,10 @@ var userSchema = new Schema({
 		require: true,
 	},
 	password: {
+		type: String,
+		require: true,
+	},
+	time: {
 		type: String,
 		require: true,
 	},

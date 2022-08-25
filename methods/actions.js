@@ -11,6 +11,7 @@ var functions = {
 				username: req.body.username,
 				mseID: req.body.mseID,
 				password: req.body.password,
+				time: req.body.time,
 			});
 			newUser.save(function (err, newUser) {
 				if (err) {
