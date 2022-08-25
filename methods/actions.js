@@ -36,7 +36,7 @@ var functions = {
 				if (err) {
 					res.json({ success: false, msg: 'Failed to save' });
 				} else {
-					res.json({ success: true, msg: 'Successfully saved' });
+					res.json({ success: true, msg: { status: 'success' } });
 				}
 			});
 		}
@@ -116,6 +116,26 @@ var functions = {
 					username: decodedtoken.username,
 					mseID: decodedtoken.mseID,
 					timeStamp: decodedtoken.time,
+				},
+			});
+		} else {
+			return res.json({ success: false, msg: 'No Headers' });
+		}
+	},
+	addAttend: function (req, res) {
+		if (
+			req.headers.authorization &&
+			req.headers.authorization.split(' ')[0] === 'Bearer' &&
+			req.headers.authorization.split(' ')[2] !== ''
+		) {
+			var token = req.headers.authorization.split(' ')[1];
+			var decodedtoken = jwt.decode(token, config.secret);
+			return res.json({
+				success: true,
+				msg: {
+					username: decodedtoken.username,
+					empID: decodedtoken.empID,
+					attendance: decodedtoken.attendance,
 				},
 			});
 		} else {
