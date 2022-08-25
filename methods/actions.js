@@ -62,7 +62,11 @@ var functions = {
 			var decodedtoken = jwt.decode(token, config.secret);
 			return res.json({
 				success: true,
-				msg: 'Hello ' + decodedtoken.username,
+				msg: {
+					username: decodedtoken.username,
+					mseID: decodedtoken.mseID,
+					timeStamp: decodedtoken.time
+				},
 			});
 		} else {
 			return res.json({ success: false, msg: 'No Headers' });

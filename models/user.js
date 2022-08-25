@@ -15,6 +15,11 @@ var userSchema = new Schema({
 		type: String,
 		require: true,
 	},
+	attendance: [
+		{
+			type: String,
+		},
+	],
 	time: {
 		type: String,
 		require: true,
