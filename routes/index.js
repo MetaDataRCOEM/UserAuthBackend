@@ -13,11 +13,12 @@ router.get('/dashboard', (req, res) => {
 //@desc Adding new user
 //@route POST /adduser
 router.post('/adduser', actions.addNew);
+router.post('/addemp', actions.addNewEmp);
 
 //@desc Authenticate a user
 //@route POST /authenticate
 router.post('/authenticate', actions.authenticate);
-router.post('/authenticate2', actions.authenticate2);
+router.post('/authenticateEmp', actions.authenticateEmp);
 
 //@desc Get info on a user
 //@route GET /getinfo

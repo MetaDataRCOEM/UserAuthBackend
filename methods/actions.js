@@ -23,6 +23,24 @@ var functions = {
 			});
 		}
 	},
+	addNewEmp: function (req, res) {
+		if (!req.body.username || !req.body.password) {
+			res.json({ success: false, msg: 'Enter all fields' });
+		} else {
+			var newEmp = Emp({
+				username: req.body.username,
+				empID: req.body.empID,
+				password: req.body.password,
+			});
+			newEmp.save(function (err, newEmp) {
+				if (err) {
+					res.json({ success: false, msg: 'Failed to save' });
+				} else {
+					res.json({ success: true, msg: 'Successfully saved' });
+				}
+			});
+		}
+	},
 	authenticate: function (req, res) {
 		User.findOne(
 			{
@@ -54,7 +72,7 @@ var functions = {
 			}
 		);
 	},
-	authenticate2: function (req, res) {
+	authenticateEmp: function (req, res) {
 		Emp.findOne(
 			{
 				username: req.body.username,
