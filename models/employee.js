@@ -14,6 +14,7 @@ var empSchema = new Schema({
 		type: String,
 		require: true,
 	},
+	
 });
 
 empSchema.pre('save', function (next) {
