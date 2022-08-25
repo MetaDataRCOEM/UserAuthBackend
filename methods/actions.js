@@ -42,6 +42,8 @@ var functions = {
 		}
 	},
 	authenticate: function (req, res) {
+		connectDB();
+
 		User.findOne(
 			{
 				username: req.body.username,
@@ -113,9 +115,16 @@ var functions = {
 			return res.json({
 				success: true,
 				msg: {
+					name: decodedtoken.name,
 					username: decodedtoken.username,
 					mseID: decodedtoken.mseID,
 					timeStamp: decodedtoken.time,
+					block: decodedtoken.block,
+					panchayat: decodedtoken.panchayat,
+					state: decodedtoken.state,
+					district: decodedtoken.state,
+					attendance: decodedtoken.attendance
+
 				},
 			});
 		} else {
