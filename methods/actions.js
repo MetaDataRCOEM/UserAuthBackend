@@ -65,7 +65,7 @@ var functions = {
 				msg: {
 					username: decodedtoken.username,
 					mseID: decodedtoken.mseID,
-					timeStamp: decodedtoken.time
+					timeStamp: decodedtoken.time,
 				},
 			});
 		} else {
