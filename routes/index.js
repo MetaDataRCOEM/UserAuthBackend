@@ -17,6 +17,7 @@ router.post('/adduser', actions.addNew);
 //@desc Authenticate a user
 //@route POST /authenticate
 router.post('/authenticate', actions.authenticate);
+router.post('/authenticate2', actions.authenticate2);
 
 //@desc Get info on a user
 //@route GET /getinfo
