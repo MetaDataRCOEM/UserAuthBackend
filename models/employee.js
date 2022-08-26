@@ -10,6 +10,7 @@ var empSchema = new Schema({
 		type: String,
 		require: true,
 	},
+	attendance: [{ type: String }],
 	password: {
 		type: String,
 		require: true,
