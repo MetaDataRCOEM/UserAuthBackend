@@ -123,8 +123,7 @@ var functions = {
 					panchayat: decodedtoken.panchayat,
 					state: decodedtoken.state,
 					district: decodedtoken.state,
-					attendance: decodedtoken.attendance
-
+					attendance: decodedtoken.attendance,
 				},
 			});
 		} else {
