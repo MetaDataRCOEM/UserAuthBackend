@@ -15,26 +15,6 @@ var userSchema = new Schema({
 		type: String,
 		require: true,
 	},
-	name: {
-		type: String,
-		require: true
-	},
-	panchayat: {
-		type: String,
-		require: true
-	},
-	block: {
-		type : String,
-		require: true
-	},
-	district: {
-		type: String,
-		require: true
-	},
-	state: {
-		type:  String,
-		require: true
-	},
 	attendance: [
 		{
 			type: String,

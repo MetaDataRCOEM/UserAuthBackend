@@ -20,9 +20,6 @@ router.post('/addemp', actions.addNewEmp);
 router.post('/authenticate', actions.authenticate);
 router.post('/authenticateEmp', actions.authenticateEmp);
 
-router.post('/addattendance', actions.addAttend);
-
-
 //@desc Get info on a user
 //@route GET /getinfo
 router.get('/getinfo', actions.getinfo);
