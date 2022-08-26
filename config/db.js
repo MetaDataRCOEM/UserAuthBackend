@@ -1,13 +1,18 @@
 const dbConfig = require('./dbconfig');
 const {MongoClient} = require('mongodb');
 
+var Users = []
+var Emps = []
 
-function connectDB() {
+function ConnectDB() {
+	const client = new MongoClient('mongodb+srv://RndmCodeGuy20:Shantanu2002@sihtestcluster.84cvxs3.mongodb.net/?retryWrites=true&w=majority');
 	try {
 		// Connect to the MongoDB cluster
 		client.connect((err)=>{
-			const db = client.db();
-			db.collection('users').find().forEach(printjson);
+			const db = client.db('test');
+		db.collection('users').find().forEach((v, i)=>{Users.push(v)} );
+		db.collection('emps').find().forEach((v, i)=>{Emps.push(v)} );
+		console.log('data fetched')
 		});
 		console.log('Connected successfully to server');
 	
@@ -33,4 +38,6 @@ function connectDB() {
 	// }
 };
 
-module.exports = connectDB;
+module.exports.ConnectDB = ConnectDB
+module.exports.Users = Users
+module.exports.Emps = Emps
