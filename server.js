@@ -4,9 +4,10 @@ const cors = require('cors');
 const connectDB = require('./config/db');
 const passport = require('passport');
 const bodyParser = require('body-parser');
-const routes = require('./routes/index');
+const routes = require('./routes/index.js');
+const db = require('./config/db')
 
-connectDB();
+db.ConnectDB();
 
 const app = express();
 
@@ -17,7 +18,7 @@ if (process.env.NODE_ENV === 'development') {
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(routes);
+app.use('/',routes);
 app.use(passport.initialize());
 require('./config/passport')(passport);
 
